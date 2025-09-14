@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVAM MENS WEAR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+   /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+}
+
+header .logo {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #ff6b6b;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Products Section */
+.products {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background-color: #ff6b6b;
+}
+
+/* Cart Section */
+.cart {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cart-item button {
+    padding: 5px 10px;
+    background-color:;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Responsive */
+@media(max-width:768px){
+    header nav {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .checkout-btn {
+        width: 100%;
+        padding: 15px;  
+        font-size: 18px;
+        background-color: #ff6b6b;
+        color: #fff;
+        border: none;
+
+        border-radius: 5px;
+        cursor: pointer;
+
+        margin-top: 20px;
+        
+    }
+    
+}
+
+
+
+
+
+    </style>
+  
+</head>
+<body>
+
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">SHIVAM MENS WEAR</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Fashion for Everyone</h2>
+            <p>Explore our latest collection of trendy clothes.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Product cards will be dynamically added by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section id="cart" class="cart">
+        <div class="container">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <h3 id="total">Total: ₹0</h3>
+            <button  id="checkout-btn" >Checkout</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: shivammenswear076@gmail.com| Phone:748917199</p>
+            <p>Follow us on Instagram: shivammenswear001</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Clothes Shop. All rights reserved.</p>
+        </div>
+    </footer>
+      <script>
+    // Sample products data
+const products = [
+    { id: 1, name: "Men's Shirt", price:500, image:"WhatsApp Image 2025-08-31 at 7.23.22 PM.jpeg" },
+    { id: 2, name: "Fragrance Itra", price: 199, image: "WhatsApp Image 2025-09-03 at 4.55.22 PM.jpeg" },
+    { id: 3, name: "T-Shirt", price: 300, image: "WhatsApp Image 2025-08-17 at 9.06.33 AM.jpeg" },
+    { id: 4, name: "Jeans", price: 800, image:"WhatsApp Image 2025-08-26 at 9.28.01 AM.jpeg" }
+];
+
+const productGrid = document.getElementById("product-grid");
+const cartItemsDiv = document.getElementById("cart-items");
+const totalDiv = document.getElementById("total");
+const checkoutBtn = document.getElementById("checkout-btn");
+
+let cart = [];
+
+// Display products
+products.forEach(product => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+    card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>Price: ₹${product.price}</p>
+        <button onclick="addToCart(${product.id})">Add to Cart</button>
+    `;
+    productGrid.appendChild(card);
+});
+
+// Add to Cart function
+function addToCart(id){
+    const product = products.find(p => p.id === id);
+    cart.push(product);
+    displayCart();
+}
+
+// Display Cart
+function displayCart(){
+    cartItemsDiv.innerHTML = "";
+    let total = 0;
+    cart.forEach((item, index) => {
+        total += item.price;
+        const div = document.createElement("div");
+        div.classList.add("cart-item");
+        div.innerHTML = `
+            <span>${item.name} - ₹${item.price}</span>
+            <button onclick="removeFromCart(${index})">Remove</button>
+        `;
+        cartItemsDiv.appendChild(div);
+    });
+    totalDiv.innerText = `Total: ₹${total}`;
+}
+
+// Remove from cart
+function removeFromCart(index){
+    cart.splice(index, 1);
+    displayCart();
+}
+
+// Checkout button
+checkoutBtn.addEventListener("click", () => {
+    if(cart.length === 0){
+        alert("Your cart is empty!");
+    } else {
+        alert("Order placed successfully!");
+        cart = [];
+        displayCart();
+    }
+});
+
+      </script>
+    <script src="script.js"></script>
+</body>
+</html>
